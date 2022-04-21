@@ -2,6 +2,11 @@ import $ from 'jquery';
 import './css/styles.css';
 import Rates from'./rates.js'
 
+function usdConversion(usd, currencyRate) {
+  let convertedPrice = usd * currencyRate;
+  return convertedPrice;
+}
+
 $(document).ready(function() {
   $("#exchange").submit(function(event) {
     let promise = Rates.getRates();
@@ -9,9 +14,11 @@ $(document).ready(function() {
       let body = JSON.parse(response);
       const usdAmount = parseInt($("#usd").val());
       const userCurrency = $("#conversion-options").val();
-      console.log(body);
+      const conversionRate = body["conversion_rates"][userCurrency];
+      const finalAmount = usdConversion(usdAmount, conversionRate);
+      console.log(finalAmount);
+      console.log(conversionRate);
       console.log(usdAmount);
-      console.log(userCurrency);
     }, function(error) {
       $('#error').text(`There was an error processing your request: ${error}`)
     });
