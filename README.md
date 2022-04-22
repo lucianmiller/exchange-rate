@@ -1,31 +1,38 @@
-# _{Application Name}_
+# Exchange Rate
 
-#### _{Brief description of application}, {Date of current version}_
+#### API independent project for Epicodus, 4/22/2022
 
 #### By Lucian Miller
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+This website allows you to select one of five currencies(Euro, Japanese Yen, Mexican Peso, Costa Rican Colon and Australian Dollar) and convert an inputted USD amount. The website will then display how much the amount of USD would be in that other currency. This website utilized [ExchangeRate-API](https://www.exchangerate-api.com/).
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+* Clone or download this repository
+* Create a `.env` file in main folder
+* Get a free API key from [ExchangeRate-API](https://www.exchangerate-api.com/)
+* In `.env` file, type `API_KEY=` then past your API with NO SPACE after the =
+* Type `npm install` in terminal to install necessary packages
+* Type `npm run start` to open a local host in your browser
+* Type in desired USD amount in blank space provided
+* Use drop down menu to select desired currency
+* Press 'Convert' button to see converted rate
 
 # Specs
 
 |Description|Input|Output
 |:--:|:--:|:--:|
+|Convert USD to Euro| USD: 5| Euro: 4.61|
+|Convert USD to Japanese Yen| USD: 5| Japanese Yen: 641.58|
+|Convert USD to Mexican Peso| USD: 5| Mexican Peso: 100.81|
+|Convert USD to Costa Rican Colon| USD: 5| Costa Rican Colon: 100.81|
+|Convert USD to Australian Dollar| USD: 5| Australian Dollar: 5|
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+No known bugs as of this version
 
 ## Support and contact details
 
@@ -33,10 +40,16 @@ lucian.miller185@gmail.com
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+* HTML
+* Javascript
+* jQuery
+* [ExchangeRate-API](https://www.exchangerate-api.com/)
+* Webpack
+* VS code
+* git
 
 ### License
 
-*This software is licensed under the (blank) license*
+*This software is licensed under the MIT license*
 
-Copyright (c) 2021 Lucian Miller
+Copyright (c) 2022 Lucian Miller
