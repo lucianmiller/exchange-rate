@@ -16,9 +16,6 @@ $(document).ready(function() {
       const userCurrency = $("#conversion-options").val();
       const conversionRate = body["conversion_rates"][userCurrency];
       const finalAmount = usdConversion(usdAmount, conversionRate);
-      console.log(finalAmount);
-      console.log(conversionRate);
-      console.log(usdAmount);
       $('#final-conversion').text(`The amount is $${finalAmount}.`)
     }, function(error) {
       $('#error').text(`There was an error processing your request: ${error}`)
