@@ -4,7 +4,7 @@ import Rates from'./rates.js'
 
 function usdConversion(usd, currencyRate) {
   let convertedPrice = usd * currencyRate;
-  return convertedPrice;
+  return convertedPrice.toFixed(2);
 }
 
 $(document).ready(function() {
@@ -19,6 +19,7 @@ $(document).ready(function() {
       console.log(finalAmount);
       console.log(conversionRate);
       console.log(usdAmount);
+      $('#final-conversion').text(`The amount is $${finalAmount}.`)
     }, function(error) {
       $('#error').text(`There was an error processing your request: ${error}`)
     });
