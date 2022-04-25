@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import './css/styles.css';
-import Rates from'./rates.js'
+import Rates from'./rates.js';
 
 function usdConversion(usd, currencyRate) {
   let convertedPrice = usd * currencyRate;
@@ -16,9 +16,9 @@ $(document).ready(function() {
       const userCurrency = $("#conversion-options").val();
       const conversionRate = body["conversion_rates"][userCurrency];
       const finalAmount = usdConversion(usdAmount, conversionRate);
-      $('#final-conversion').text(`The amount is $${finalAmount}.`)
+      $('#final-conversion').text(`The amount is $${finalAmount}.`);
     }, function(error) {
-      $('#error').text(`There was an error processing your request: ${error}`)
+      $('#error').text(`There was an error processing your request: ${error}`);
     });
     event.preventDefault();
   });
