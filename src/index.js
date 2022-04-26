@@ -18,7 +18,8 @@ $(document).ready(function() {
       const finalAmount = usdConversion(usdAmount, conversionRate);
       $('#final-conversion').text(`The amount is $${finalAmount}.`);
     }, function(error) {
-      $('#error').text(`There was an error processing your request: ${error}`);
+      let errorObj = JSON.parse(error);
+      $('#error').text(`There was an error processing your request: ${errorObj["error-type"]}`);
     });
     event.preventDefault();
   });
